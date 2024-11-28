@@ -4,4 +4,10 @@
 
 rédiger Tutoriel 7 : Concepts avancés de Kotlin (Collections et génériques)
 
-!export[/prompts/create-tuto/tuto3.prompt.md]  
+La version de tutoriel actuel 
+
+```md
+!import[/../projets/_chapters/m3-afficher-listes-utiliser-material-design/tuto7.md] 
+```
+
+!export[/prompts/create-tuto/tuto7.prompt.md]  

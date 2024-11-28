@@ -4,4 +4,4 @@
 
 rédiger le **Mini-projet de module 2 : Application de calcul de pourboire** se
 
-!export[/prompts/create-tuto/mini-projet-module1.prompt.md]  
+!export[/prompts/create-tuto/mini-projet-module2.prompt.md]  

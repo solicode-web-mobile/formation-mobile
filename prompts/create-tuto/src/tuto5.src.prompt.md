@@ -4,4 +4,4 @@
 
 rédiger le Tutoriel 5 : Interaction avec l'interface utilisateur
 
-!export[/prompts/create-tuto/tuto3.prompt.md]  
+!export[/prompts/create-tuto/tuto5.prompt.md]  

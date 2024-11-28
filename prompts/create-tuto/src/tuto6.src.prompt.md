@@ -4,4 +4,4 @@
 
 rédiger Tutoriel 6 : Gestion de l’état dans Jetpack Compose
 
-!export[/prompts/create-tuto/tuto3.prompt.md]  
+!export[/prompts/create-tuto/tuto6.prompt.md]  
