@@ -31,6 +31,9 @@ Ces tutoriels doivent s'inspirer de la formation officielle d'Android Studio : *
 ## **Contraintes**
 
 - Les tutoriels doivent, en fin de parcours, permettre de créer une application de gestion de to TODO liste.
+- Donner le code complet de chaque tutoriel
+- Donner le nom de fichier à modifier dans le projet
+- 
 
 ---
 
