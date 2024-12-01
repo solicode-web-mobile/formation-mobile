@@ -2,6 +2,7 @@
 
 ## **Travail à réaliser :**  
 
-rédiger le Tutoriel 3 : Création de l’interface avec Jetpack Compose
+rédiger le Tutoriel 11 : Introduction à l’architecture MVVM
 
-!export[/prompts/create-tuto/tuto3.prompt.md]  
+
+!export[/prompts/create-tuto/tuto11.prompt.md]  

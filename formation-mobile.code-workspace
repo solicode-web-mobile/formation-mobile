@@ -4,13 +4,16 @@
 			"path": "."
 		},
 		{
-			"path": "../projets/_chapters/m1-première-application-android"
+			"path": "../projets/_chapters/mobile/m1-première-application-android"
 		},
 		{
-			"path": "../projets/_chapters/m2-créer-interface-utilisateur"
+			"path": "../projets/_chapters/mobile/m2-créer-interface-utilisateur"
 		},
 		{
-			"path": "../projets/_chapters/m3-afficher-listes-utiliser-material-design"
+			"path": "../projets/_chapters/mobile/m3-afficher-listes-utiliser-material-design"
+		},
+		{
+			"path": "../projets/_chapters/mobile/m4-navigation-architecture"
 		}
 	],
 	"settings": {}

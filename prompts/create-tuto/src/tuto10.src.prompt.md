@@ -2,6 +2,7 @@
 
 ## **Travail à réaliser :**  
 
-rédiger le Tutoriel 3 : Création de l’interface avec Jetpack Compose
+rédiger le Tutoriel 10 : Navigation dans Jetpack Compose
 
-!export[/prompts/create-tuto/tuto3.prompt.md]  
+
+!export[/prompts/create-tuto/tuto10.prompt.md]  
