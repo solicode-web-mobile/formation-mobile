@@ -1,36 +1,55 @@
-### Contexte  
+### **Contexte**  
 
-Solicode, un centre de formation affilié à l'OFPPT, met en œuvre une pédagogie active orientée projets. Chaque semaine de formation est articulée autour d’un projet qui inclut plusieurs livrables, tous présentés en fin de semaine.  
+Solicode, un centre de formation affilié à l'OFPPT, applique une pédagogie active orientée projets. Chaque semaine de formation est structurée autour d’un projet intégrant plusieurs livrables, présentés à la fin de la semaine.  
 
-Les livrables hebdomadaires comprennent :  
-- Le code source,  
-- Une présentation,  
-- Un rapport détaillé,  
-- Un tutoriel pour réaliser le prototype,  
-- Un prototype concret,  
-- Un mini-projet complémentaire.  
+**Livrables hebdomadaires :**  
+- Code source,  
+- Présentation,  
+- Rapport détaillé,  
+- Tutoriel pour réaliser le prototype,  
+- Prototype concret,  
+- Mini-projet complémentaire.  
 
-**Particularité :** Les sessions alternent entre le développement mobile (Android avec Kotlin) et le framework Laravel.
-
----
-
-### Rôle  
-
-Vous êtes un formateur expérimenté (10 ans) en développement mobile, avec une spécialisation dans Android et Kotlin. Votre objectif principal est d’accompagner les apprenants dans la maîtrise des principes fondamentaux et avancés du développement Android.
+**Particularité :** Les formations alternent entre développement mobile (Android avec Kotlin) et développement web avec Laravel.  
 
 ---
 
-### Objectifs  
+### **Votre rôle**  
 
-1. **Création de tutoriels didactiques** pour l’apprentissage progressif du développement mobile.  
-2. **Intégration d’un mini-projet pratique** à la fin de chaque module d’apprentissage.  
-3. **Conception d’un projet final** pour évaluer les compétences acquises.  
-4. Basculer les tutoriels autour du guide officiel d’Android Studio : **Principes de base d'Android avec Compose**.  
+En tant que formateur expérimenté (10 ans) spécialisé en développement Android avec Kotlin, votre mission est d’accompagner les apprenants dans la maîtrise des concepts clés et avancés du développement mobile.  
 
 ---
 
-### Contraintes  
+### **Objectifs pédagogiques**  
 
+1. Concevoir **des tutoriels progressifs et didactiques** pour apprendre le développement Android.  
+2. Proposer **un mini-projet pratique** à la fin de chaque module pour renforcer les acquis.  
+3. Préparer un **projet final évaluatif** mettant en application l’ensemble des compétences.  
+4. S’appuyer sur le guide officiel d’Android Studio et utiliser **Jetpack Compose** comme base des tutoriels.  
+
+---
+
+### **Contraintes et exigences**  
+
+1. **Application cible :** Chaque tutoriel doit contribuer à créer une application fonctionnelle de gestion de tâches (TODO liste).  
+2. **Code clair et complet :** Fournir du code prêt à exécuter dans Android Studio.  
+3. **Approche pédagogique :**  
+   - Identifier les fichiers et sections à modifier.  
+   - Expliquer chaque bloc de code à l’aide de commentaires détaillés.  
+   - Introduire chaque concept avant de le coder.  
+   - Éviter de répéter les notions déjà couvertes dans les tutoriels précédents.  
+4. **Utilisation obligatoire de Jetpack Compose** dans toutes les implémentations.  
+5. Les mini-projets doivent uniquement utiliser les notions vues dans les tutoriels et modules précédents.  
+6. **Structure des dépendances :** Utiliser le **catalogue de bibliothèques** dans `build.gradle`, par exemple :  
+   ```kotlin  
+   implementation(libs.androidx.navigation.compose)  
+   ```  
+
+- Utilisation de androidx.compose.material3 : Material 3
+
+---
+
+### **Plan des tutoriels**  
 1. Les tutoriels doivent culminer avec la réalisation d’une application fonctionnelle de gestion de tâches (TODO liste).  
 2. **Code complet et fonctionnel :** Chaque tutoriel doit inclure du code prêt à exécuter dans Android Studio.  
 3. **Clarté pédagogique :**  
@@ -193,6 +212,283 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
   - Possibilité de connexion à une API pour synchroniser les tâches  
 
 
+```
+---
+
+### **Résultats attendus pour chaque tutoriel**  
+
+1. Fournir une introduction théorique expliquant les notions clés avant leur utilisation dans le code.  
+2. Inclure un code complet, facile à copier et exécuter dans Android Studio.  
+3. Ajouter des questions ou exercices en fin de tutoriel pour réfléchir à une organisation optimale des fichiers et des classes.  
+4. Réaliser les exemples avec **un minimum de complexité**, adapté au niveau des apprenants.  
+
+
+5. L'emplacement et le nom de chaque fichier et classe à créer dans le projet.  
+6. Une organisation structurée du code en fichiers et dossiers, basée sur une architecture que vous proposerez.  
+7. Ajouter une partie théorique pour expliquer les notions de base aborder dans le tutoriel
+
+
+
+### **Travail à réaliser :**  
+
+Donner seulement un tutoriel pour ajouter une menu NavigationDrawer pour le résultat de Tuto10
+
+**Tutoriel 10 : Navigation dans Jetpack Compose** pour inclure : 
+
+
+
+
+**Version actuelle du tutoriel** :  
+```
+---
+reference: m4-navigation-architecture-tuto10
+slug: tuto10
+module_reference: mobile
+part_reference: m4-navigation-architecture
+concept_reference: ''
+title: tuto10
+description: ''
+order: 133
+directory: mobile/m4-navigation-architecture
+permalink: mobile/m4-navigation-architecture/tuto10
+layout: chapters
+---
+# **Tutoriel 10 : Navigation dans Jetpack Compose (Version Révisée)**
+
+---
+
+## **Objectif pédagogique**  
+Apprendre à mettre en place une navigation multi-écrans dans une application Android avec Jetpack Compose, tout en structurant le code suivant une architecture modulaire et maintenable.
+
+---
+
+## **1. Notions théoriques**
+
+Avant de plonger dans le code, voici les concepts à comprendre :  
+
+1. **Jetpack Navigation Compose :**  
+   - Une bibliothèque officielle d'Android pour gérer la navigation dans les applications Jetpack Compose.  
+   - Elle simplifie la navigation entre les écrans (ou *composables*).  
+
+2. **Routes et arguments :**  
+   - Les *routes* définissent les chemins entre les écrans.  
+   - Les arguments permettent de transmettre des données entre les écrans.  
+
+3. **NavHost et NavGraph :**  
+   - **NavHost** : Conteneur principal où sont définies les différentes routes.  
+   - **NavGraph** : Décrit la structure de navigation (écrans et transitions).  
+
+4. **Structure de l’application :**  
+   - Une organisation modulaire facilite l’évolution de l’application et améliore la lisibilité.  
+
+---
+
+## **2. Organisation du projet**
+
+Dans le dossier `src/main/java/com/votreprojet/`, créez la structure suivante :  
+
+```
+com.votreprojet  
+├── navigation  
+│   ├── NavGraph.kt  
+│   └── Routes.kt  
+├── ui  
+│   ├── home  
+│   │   └── HomeScreen.kt  
+│   ├── details  
+│   │   └── DetailsScreen.kt  
+└── MainActivity.kt  
+```
+
+**Explications :**  
+1. **`navigation/`** : Contient la logique de navigation.  
+2. **`ui/`** : Contient les écrans regroupés par fonctionnalité (par exemple, `home` pour l’écran principal).  
+3. **`MainActivity.kt`** : Point d’entrée de l’application.
+
+---
+
+## **3. Configuration initiale**
+
+### Dépendances à ajouter dans `build.gradle` :  
+
+```kotlin
+implementation(libs.androidx.navigation.compose)
+```
+
+---
+
+## **4. Création des fichiers**
+
+### **4.1. `Routes.kt` : Définir les routes**
+
+Ce fichier centralise les noms des routes pour éviter les erreurs.  
+
+```kotlin
+package com.votreprojet.navigation
+
+object Routes {
+    const val Home = "home"
+    const val Details = "details/{itemId}"
+}
+```
+
+### **4.2. `NavGraph.kt` : Gestion des transitions**
+
+Ce fichier définit les écrans et la navigation entre eux.  
+
+```kotlin
+package com.votreprojet.navigation
+
+import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import com.votreprojet.ui.details.DetailsScreen
+import com.votreprojet.ui.home.HomeScreen
+
+@Composable
+fun NavGraph(navController: NavHostController) {
+    NavHost(
+        navController = navController,
+        startDestination = Routes.Home
+    ) {
+        composable(Routes.Home) { HomeScreen(navController) }
+        composable(Routes.Details) { backStackEntry ->
+            val itemId = backStackEntry.arguments?.getString("itemId")
+            DetailsScreen(navController, itemId)
+        }
+    }
+}
+```
+
+---
+
+## **5. Création des écrans**
+
+### **5.1. `HomeScreen.kt` : Écran principal**  
+
+Cet écran contient un bouton permettant de naviguer vers l’écran des détails.  
+
+```kotlin
+package com.votreprojet.ui.home
+
+import androidx.compose.foundation.layout.*  
+import androidx.compose.material.*  
+import androidx.compose.runtime.Composable  
+import androidx.navigation.NavController  
+import com.votreprojet.navigation.Routes
+
+@Composable
+fun HomeScreen(navController: NavController) {
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Écran principal") }) }
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            Text("Bienvenue sur l'écran principal !", style = MaterialTheme.typography.h5)
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(onClick = { navController.navigate("details/42") }) {
+                Text("Voir les détails de l'élément 42")
+            }
+        }
+    }
+}
+```
+
+---
+
+### **5.2. `DetailsScreen.kt` : Écran de détails**
+
+Cet écran affiche les informations transmises depuis `HomeScreen`.  
+
+```kotlin
+package com.votreprojet.ui.details
+
+import androidx.compose.foundation.layout.*  
+import androidx.compose.material.*  
+import androidx.compose.runtime.Composable  
+import androidx.navigation.NavController  
+
+@Composable
+fun DetailsScreen(navController: NavController, itemId: String?) {
+    Scaffold(
+        topBar = { TopAppBar(title = { Text("Écran de détails") }) }
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+        ) {
+            Text("Détails pour l'élément : $itemId", style = MaterialTheme.typography.h5)
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(onClick = { navController.popBackStack() }) {
+                Text("Retour à l'écran principal")
+            }
+        }
+    }
+}
+```
+
+---
+
+## **6. Intégration dans l’application**
+
+Modifiez `MainActivity.kt` pour intégrer la navigation.  
+
+```kotlin
+package com.votreprojet
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.material.MaterialTheme
+import androidx.navigation.compose.rememberNavController
+import com.votreprojet.navigation.NavGraph
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MaterialTheme {
+                val navController = rememberNavController()
+                NavGraph(navController = navController)
+            }
+        }
+    }
+}
+```
+
+---
+
+## **7. Exercices pratiques**  
+
+1. **Ajout d’un écran supplémentaire :**  
+   - Créez un écran `ProfileScreen` et ajoutez-le au système de navigation.  
+
+2. **Transmission de données complexes :**  
+   - Modifiez `DetailsScreen` pour accepter un objet JSON contenant plusieurs propriétés.  
+
+3. **Création d’un menu de navigation :**  
+   - Implémentez un menu permettant de passer d’un écran à l’autre.  
+
+---
+
+## **8. Résultats attendus**  
+
+- Navigation fonctionnelle entre plusieurs écrans.  
+- Structure modulaire du projet.  
+- Meilleure compréhension de l’organisation et de la navigation dans une application Jetpack Compose.  
+
+---
+
+## **9. Questions d’évaluation**  
+
+1. Pourquoi utiliser une architecture modulaire dans un projet Android ?  
+2. Quels sont les avantages d’utiliser des objets pour définir les routes ?  
+3. Comment gérer les erreurs liées aux arguments manquants lors de la navigation ?
 ```
 
 

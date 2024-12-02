@@ -1,10 +1,19 @@
 !import[/prompts/mobile.context.prompt.md] 
 
-## **Tâche à réaliser :**  
 
-Rédiger le **Tutoriel 10 : Navigation dans Jetpack Compose**.  
+### **Travail à réaliser :**  
 
-### **Instructions :**  
+Donner seulement un tutoriel pour ajouter une menu NavigationDrawer pour le résultat de Tuto10
+
+**Tutoriel 10 : Navigation dans Jetpack Compose** pour inclure : 
+
+
+
+
+**Version actuelle du tutoriel** :  
+```
+!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto10.md]
+```
 
 1. Rédiger un guide détaillé et pédagogique sur la navigation dans Jetpack Compose.
 2. Intégrer des définitions clés pour bien comprendre les concepts liés à la navigation pour chaque étapes de tutoriel, tels que :
