@@ -41,6 +41,8 @@ Vous êtes un formateur expérimenté (10 ans) en développement mobile, avec un
 4. Utilisation obligatoire de **Jetpack Compose** pour tous les tutoriels.
 
 
+Le fichier build.gradle.kts utilise la configuration moderne basée sur les catalogues de versions (libs). 
+
 - Dans le mini projet il faut utiliser seulement les notion aborder dans les tuto précédents et les modules précédentes
 ---
 
@@ -61,44 +63,4 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 
 ```
 !import[/plan-formation/plan-tutos.md]
-```
-
-### Les tutoriels actuels 
-
-```
-!import[/../projets/_chapters/mobile/m1-première-application-android/tuto1.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m1-première-application-android/tuto2.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m1-première-application-android/tuto3.md]
-```
-
-
-```
-!import[/../projets/_chapters/mobile/m2-créer-interface-utilisateur/tuto4.md]
-```
-```
-!import[/../projets/_chapters/mobile/m2-créer-interface-utilisateur/tuto5.md]
-```
-```
-!import[/../projets/_chapters/mobile/m2-créer-interface-utilisateur/tuto6.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m3-afficher-listes-utiliser-material-design/tuto7.md]
-```
-```
-!import[/../projets/_chapters/mobile/m3-afficher-listes-utiliser-material-design/tuto8.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m3-afficher-listes-utiliser-material-design/tuto9.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto10.md]
 ```
