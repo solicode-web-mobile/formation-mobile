@@ -79,13 +79,18 @@
 - **Tags :** Navigation, Jetpack Compose.  
 - **Résumé :** Créer des applications multi-écrans et gérer la navigation.
 
-#### **Tutoriel 11 : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
+#### **Tutoriel 10+ : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
 - **Concepts abordés :** Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
 - **Tags :** 
 - **Résumé :** 
 
+#### **Tutoriel 11 : Cycle de vie d'une activité Android**  
+- **Concepts abordés :** Cycle de vie d'une activité Android, journalisation avec Logcat, gestion de l'état avec `rememberSaveable`, impact des modifications de configuration.  
+- **Tags :** Cycle de vie, Android, Logcat, état, rememberSaveable.  
+- **Résumé :** Comprendre et implémenter le cycle de vie d'une activité Android, diagnostiquer les transitions entre les états grâce à la journalisation, et gérer les modifications de configuration pour préserver les données utilisateur.
 
-#### **Tutoriel 12 : Introduction à l’architecture MVVM**  
+
+#### **Tutoriel 11 : Introduction à l’architecture MVVM**  
 - **Concepts abordés :** Cycle de vie, ViewModel, StateFlow.  
 - **Tags :** Architecture, ViewModel.  
 - **Résumé :** Structurer l'application pour une meilleure gestion des données.
