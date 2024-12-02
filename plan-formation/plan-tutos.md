@@ -79,7 +79,13 @@
 - **Tags :** Navigation, Jetpack Compose.  
 - **Résumé :** Créer des applications multi-écrans et gérer la navigation.
 
-#### **Tutoriel 11 : Introduction à l’architecture MVVM**  
+#### **Tutoriel 11 : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
+- **Concepts abordés :** Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
+- **Tags :** 
+- **Résumé :** 
+
+
+#### **Tutoriel 12 : Introduction à l’architecture MVVM**  
 - **Concepts abordés :** Cycle de vie, ViewModel, StateFlow.  
 - **Tags :** Architecture, ViewModel.  
 - **Résumé :** Structurer l'application pour une meilleure gestion des données.
@@ -93,7 +99,7 @@
 ### **Module 5 : Connexion à Internet et récupération de données**  
 **Objectif pédagogique :** Apprendre à récupérer des données en ligne et les afficher.
 
-#### **Tutoriel 12 : Récupération de données via API REST**  
+#### **Tutoriel 13 : Récupération de données via API REST**  
 - **Concepts abordés :** Requêtes HTTP, coroutines, JSON.  
 - **Tags :** API, REST, Coroutines.  
 - **Résumé :** Connecter l'application à des sources de données en ligne.
@@ -107,7 +113,7 @@
 ### **Module 6 : Persistance des données locales**  
 **Objectif pédagogique :** Stocker les données localement à l'aide de Room et DataStore.
 
-#### **Tutoriel 13 : Utilisation de Room pour la persistance**  
+#### **Tutoriel 14 : Utilisation de Room pour la persistance**  
 - **Concepts abordés :** Bases de données SQLite, DAO, Room.  
 - **Tags :** Persistance, Room, SQLite.  
 - **Résumé :** Sauvegarder et récupérer des données localement.
