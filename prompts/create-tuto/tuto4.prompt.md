@@ -1,63 +1,56 @@
-### Contexte  
+### **Contexte**  
 
-Solicode, un centre de formation affilié à l'OFPPT, met en œuvre une pédagogie active orientée projets. Chaque semaine de formation est articulée autour d’un projet qui inclut plusieurs livrables, tous présentés en fin de semaine.  
+Solicode, un centre de formation affilié à l'OFPPT, applique une pédagogie active orientée projets. Chaque semaine de formation est structurée autour d’un projet intégrant plusieurs livrables, présentés à la fin de la semaine.  
 
-Les livrables hebdomadaires comprennent :  
-- Le code source,  
-- Une présentation,  
-- Un rapport détaillé,  
-- Un tutoriel pour réaliser le prototype,  
-- Un prototype concret,  
-- Un mini-projet complémentaire.  
+**Livrables hebdomadaires :**  
+- Code source,  
+- Présentation,  
+- Rapport détaillé,  
+- Tutoriel pour réaliser le prototype,  
+- Prototype concret,  
+- Mini-projet complémentaire.  
 
-**Particularité :** Les sessions alternent entre le développement mobile (Android avec Kotlin) et le framework Laravel.
-
----
-
-### Rôle  
-
-Vous êtes un formateur expérimenté (10 ans) en développement mobile, avec une spécialisation dans Android et Kotlin. Votre objectif principal est d’accompagner les apprenants dans la maîtrise des principes fondamentaux et avancés du développement Android.
+**Particularité :** Les formations alternent entre développement mobile (Android avec Kotlin) et développement web avec Laravel.  
 
 ---
 
-### Objectifs  
+### **Votre rôle**  
 
-1. **Création de tutoriels didactiques** pour l’apprentissage progressif du développement mobile.  
-2. **Intégration d’un mini-projet pratique** à la fin de chaque module d’apprentissage.  
-3. **Conception d’un projet final** pour évaluer les compétences acquises.  
-4. Basculer les tutoriels autour du guide officiel d’Android Studio : **Principes de base d'Android avec Compose**.  
+En tant que formateur expérimenté (10 ans) spécialisé en développement Android avec Kotlin, votre mission est d’accompagner les apprenants dans la maîtrise des concepts clés et avancés du développement mobile.  
 
 ---
 
-### Contraintes  
+### **Objectifs pédagogiques**  
 
-1. Les tutoriels doivent culminer avec la réalisation d’une application fonctionnelle de gestion de tâches (TODO liste).  
-2. **Code complet et fonctionnel :** Chaque tutoriel doit inclure du code prêt à exécuter dans Android Studio.  
-3. **Clarté pédagogique :**  
-   - Indiquez les fichiers à modifier dans le projet.  
-   - Commentez chaque bloc de code pour en expliquer le fonctionnement.  
-   - Introduisez chaque partie de code avant son utilisation.  
-   - Évitez de réexpliquer des notions déjà couvertes dans les tutoriels précédents.  
-4. Utilisation obligatoire de **Jetpack Compose** pour tous les tutoriels.
-
-
-- Dans le mini projet il faut utiliser seulement les notion aborder dans les tuto précédents et les modules précédentes
----
-
-### Plan des tutoriels  
-
-1. Introduction au développement Android et Jetpack Compose.  
-2. Comprendre les concepts fondamentaux : Layouts et Widgets.  
-3. Gestion des états avec Compose : Création d’une TODO liste simple.  
-4. Interaction utilisateur et navigation : Ajout d’un système de tâches.  
-5. Persistance des données : Sauvegarder les tâches avec Room.  
-6. Optimisation et déploiement de l’application finale.  
+1. Concevoir **des tutoriels progressifs et didactiques** pour apprendre le développement Android.  
+2. Proposer **un mini-projet pratique** à la fin de chaque module pour renforcer les acquis.  
+3. Préparer un **projet final évaluatif** mettant en application l’ensemble des compétences.  
+4. S’appuyer sur le guide officiel d’Android Studio et utiliser **Jetpack Compose** comme base des tutoriels.  
 
 ---
 
-Si vous voulez, je peux commencer directement par l'élaboration d'un des tutoriels ou compléter un élément déjà existant dans votre formation.
+### **Contraintes et exigences**  
 
-### Plan des tutoriels :
+1. **Application cible :** Chaque tutoriel doit contribuer à créer une application fonctionnelle de gestion de tâches (TODO liste).  
+2. **Code clair et complet :** Fournir du code prêt à exécuter dans Android Studio.  
+3. **Approche pédagogique :**  
+   - Identifier les fichiers et sections à modifier.  
+   - Expliquer chaque bloc de code à l’aide de commentaires détaillés.  
+   - Introduire chaque concept avant de le coder.  
+   - Éviter de répéter les notions déjà couvertes dans les tutoriels précédents.  
+4. **Utilisation obligatoire de Jetpack Compose** dans toutes les implémentations.  
+5. Les mini-projets doivent uniquement utiliser les notions vues dans les tutoriels et modules précédents.  
+6. **Structure des dépendances :** Utiliser le **catalogue de bibliothèques** dans `build.gradle`, par exemple :  
+   ```kotlin  
+   implementation(libs.androidx.navigation.compose)  
+   ```  
+
+- Utilisation de androidx.compose.material3 : Material 3
+
+---
+
+### **Plan des tutoriels**  
+
 ```
 
 ### **Module 1 : Découverte d'Android avec Kotlin et Jetpack Compose**  
@@ -98,7 +91,7 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 - **Résumé :** Créer des applications interactives et réactives.
 
 #### **Tutoriel 6 : Gestion de l’état dans Jetpack Compose**  
-- **Concepts abordés :** États, immutabilité, introduction aux ViewModels.  
+- **Concepts abordés :** États, immutabilité
 - **Tags :** État, Jetpack Compose.  
 - **Résumé :** Contrôler l'état et la réactivité de l'application.
 
@@ -140,10 +133,22 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 - **Tags :** Navigation, Jetpack Compose.  
 - **Résumé :** Créer des applications multi-écrans et gérer la navigation.
 
-#### **Tutoriel 11 : Introduction à l’architecture MVVM**  
-- **Concepts abordés :** Cycle de vie, ViewModel, StateFlow.  
-- **Tags :** Architecture, ViewModel.  
-- **Résumé :** Structurer l'application pour une meilleure gestion des données.
+#### **Tutoriel 10+ : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
+- **Concepts abordés :** Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
+- **Tags :** 
+- **Résumé :** 
+
+#### **Tutoriel 11 : Cycle de vie d'une activité Android**  
+- **Concepts abordés :** Cycle de vie d'une activité Android, journalisation avec Logcat, gestion de l'état avec `rememberSaveable`, impact des modifications de configuration.  
+- **Tags :** Cycle de vie, Android, Logcat, état, rememberSaveable.  
+- **Résumé :** Comprendre et implémenter le cycle de vie d'une activité Android, diagnostiquer les transitions entre les états grâce à la journalisation, et gérer les modifications de configuration pour préserver les données utilisateur.
+
+
+#### **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose**  
+- **Concepts abordés :** Introduction à ViewModel, gestion de l'état avec `StateFlow`, séparation des responsabilités entre UI et logique métier, immutabilité de l'état, et persistance de l'état lors des changements de configuration.  
+- **Tags :** ViewModel, Jetpack Compose, StateFlow, UDF, gestion d'état.  
+- **Résumé :** Découvrir comment utiliser ViewModel pour gérer l'état dans une application Jetpack Compose, tout en suivant un flux de données unidirectionnel. Ce tutoriel explore la persistance de l'état, l'immuabilité, et la gestion des événements utilisateur pour construire des applications réactives et robustes.  
+
 
 #### **Mini-projet : Application multi-écrans My City**  
 - **Description :** Concevoir une application avec plusieurs écrans de navigation.  
@@ -154,7 +159,7 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 ### **Module 5 : Connexion à Internet et récupération de données**  
 **Objectif pédagogique :** Apprendre à récupérer des données en ligne et les afficher.
 
-#### **Tutoriel 12 : Récupération de données via API REST**  
+#### **Tutoriel 13 : Récupération de données via API REST**  
 - **Concepts abordés :** Requêtes HTTP, coroutines, JSON.  
 - **Tags :** API, REST, Coroutines.  
 - **Résumé :** Connecter l'application à des sources de données en ligne.
@@ -168,7 +173,7 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 ### **Module 6 : Persistance des données locales**  
 **Objectif pédagogique :** Stocker les données localement à l'aide de Room et DataStore.
 
-#### **Tutoriel 13 : Utilisation de Room pour la persistance**  
+#### **Tutoriel 14 : Utilisation de Room pour la persistance**  
 - **Concepts abordés :** Bases de données SQLite, DAO, Room.  
 - **Tags :** Persistance, Room, SQLite.  
 - **Résumé :** Sauvegarder et récupérer des données localement.
@@ -193,9 +198,202 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 ```
 
 
-
 ## **Travail à réaliser :**  
 
-rédiger le Tutoriel 4 : Principes avancés de Kotlin
+Modifier le Tutoriel 4 : Principes avancés de Kotlin
+
+Essayer de voir ces deux parties en détail 
+
+
+3. **Classes et objets** : Constructeurs, propriétés, méthodes.
+4. **Expressions lambdas** : Définition et usage.
+
+### Version actuel : 
+
+```md
+---
+reference: m2-créer-interface-utilisateur-tuto4
+slug: tuto4
+module_reference: mobile
+part_reference: m2-créer-interface-utilisateur
+concept_reference: ''
+title: tuto4
+description: ''
+order: 93
+directory: m2-créer-interface-utilisateur
+permalink: m2-créer-interface-utilisateur/tuto4
+layout: chapters
+---
+
+
+# Tutoriel 4 : Principes avancés de Kotlin
+
+## Objectif pédagogique
+Ce tutoriel vise à approfondir les concepts avancés de Kotlin pour permettre aux apprenants d'écrire un code plus robuste, réutilisable et élégant. Les notions abordées incluent les instructions conditionnelles, la gestion de la nullabilité, les classes et objets, ainsi que les expressions lambdas.
+
+---
+
+## Prérequis
+Avant de commencer ce tutoriel, assurez-vous d'avoir compris les bases de Kotlin, notamment :
+- Les variables,
+- Les types de données,
+- Les fonctions simples.
+
+---
+
+## Concepts abordés
+1. **Instructions conditionnelles** : If/else, when.
+2. **Nullabilité et opérateurs de sécurité** : Safe call, Elvis operator.
+3. **Classes et objets** : Constructeurs, propriétés, méthodes.
+4. **Expressions lambdas** : Définition et usage.
+
+---
+
+## Partie 1 : Instructions conditionnelles
+
+### If/Else
+L'instruction `if` fonctionne comme une expression en Kotlin. Elle peut renvoyer une valeur.
+
+#### Exemple :
+```kotlin
+val a = 10
+val b = 20
+val max = if (a > b) a else b
+println("Le maximum est : $max")
+```
+
+### When
+L'instruction `when` remplace les longues séries de `if/else`.
+
+#### Exemple :
+```kotlin
+val day = 3
+val dayName = when (day) {
+    1 -> "Lundi"
+    2 -> "Mardi"
+    3 -> "Mercredi"
+    else -> "Jour inconnu"
+}
+println("Aujourd'hui, c'est : $dayName")
+```
+
+---
+
+## Partie 2 : Nullabilité et opérateurs de sécurité
+
+### Nullabilité en Kotlin
+Kotlin impose une différenciation stricte entre les types nullable et non-nullable.
+
+#### Exemple :
+```kotlin
+var name: String? = null
+name = "Solicode"
+```
+
+### Safe Call Operator
+Pour éviter les exceptions `NullPointerException`, utilisez l'opérateur `?.`.
+
+#### Exemple :
+```kotlin
+val length = name?.length
+println("Longueur du nom : $length")
+```
+
+### Elvis Operator
+L'opérateur `?:` permet de fournir une valeur par défaut si une variable est `null`.
+
+#### Exemple :
+```kotlin
+val nameLength = name?.length ?: 0
+println("Longueur du nom (par défaut) : $nameLength")
+```
+
+---
+
+## Partie 3 : Classes et Objets
+
+### Créer une classe
+
+#### Exemple :
+```kotlin
+class Person(val name: String, var age: Int) {
+    fun greet() {
+        println("Bonjour, je m'appelle $name et j'ai $age ans.")
+    }
+}
+
+val person = Person("Alice", 25)
+person.greet()
+```
+
+### Propriétés calculées
+Vous pouvez définir des propriétés calculées en utilisant `get`.
+
+#### Exemple :
+```kotlin
+class Rectangle(val width: Int, val height: Int) {
+    val area: Int
+        get() = width * height
+}
+
+val rect = Rectangle(5, 10)
+println("Aire : ${rect.area}")
+```
+
+---
+
+## Partie 4 : Expressions Lambdas
+
+### Qu'est-ce qu'une lambda ?
+Une lambda est une fonction anonyme que vous pouvez passer comme paramètre à une autre fonction.
+
+#### Exemple :
+```kotlin
+val numbers = listOf(1, 2, 3, 4, 5)
+val doubled = numbers.map { it * 2 }
+println(doubled)
+```
+
+### Filtrage avec les lambdas
+
+#### Exemple :
+```kotlin
+val evenNumbers = numbers.filter { it % 2 == 0 }
+println(evenNumbers)
+```
+
+---
+
+## Mini-Exercice : Créer une classe "Book"
+1. Créez une classe `Book` avec les propriétés `title`, `author` et `price`.
+2. Ajoutez une méthode `discountedPrice` qui applique une remise au prix.
+3. Créez une liste de livres et filtrez ceux dont le prix est inférieur à 20 €.
+
+#### Solution suggérée :
+```kotlin
+class Book(val title: String, val author: String, var price: Double) {
+    fun discountedPrice(discount: Double): Double {
+        return price - (price * discount / 100)
+    }
+}
+
+val books = listOf(
+    Book("Kotlin for Beginners", "John Doe", 25.0),
+    Book("Advanced Kotlin", "Jane Smith", 15.0),
+    Book("Compose Mastery", "Alice Brown", 30.0)
+)
+
+val affordableBooks = books.filter { it.price < 20 }
+println("Livres abordables :")
+affordableBooks.forEach { println(it.title) }
+```
+
+---
+
+## Conclusion
+Ce tutoriel a permis de découvrir des notions avancées de Kotlin pour écrire du code plus élégant et performant. Les concepts explorés ici seront indispensables pour les tutoriels suivants, notamment pour gérer les interactions avec l’interface utilisateur et les états dans Jetpack Compose.
+
+
+```
 
 

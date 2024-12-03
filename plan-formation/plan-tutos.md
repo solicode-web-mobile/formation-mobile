@@ -32,14 +32,15 @@
 - **Résumé :** Maîtriser les concepts avancés pour écrire un code robuste.
 
 #### **Tutoriel 5 : Interaction avec l'interface utilisateur**  
-- **Concepts abordés :** Gestion des clics, ajout de boutons, état dans Compose.  
+- **Concepts abordés :** Gestion des clics, ajout de boutons.
 - **Tags :** UI, Gestion de l'état, Jetpack Compose.  
 - **Résumé :** Créer des applications interactives et réactives.
 
-#### **Tutoriel 6 : Gestion de l’état dans Jetpack Compose**  
-- **Concepts abordés :** États, immutabilité
-- **Tags :** État, Jetpack Compose.  
-- **Résumé :** Contrôler l'état et la réactivité de l'application.
+#### **Tutoriel 6 : Gestion d'états réactifs et des flux de données**  
+- **Concepts abordés :** Observateurs, `State`, `StateFlow`, `Flow`.  
+- **Tags :** Gestion de l'état, Réactivité, Jetpack Compose, Coroutines.  
+- **Résumé :** Apprendre à gérer efficacement l’état et les flux de données pour construire des applications réactives et modernes avec Jetpack Compose.  
+  
 
 #### **Mini-projet : Application de calcul de pourboire**  
 - **Description :** Développer une application pour calculer les pourboires avec gestion d'état.  

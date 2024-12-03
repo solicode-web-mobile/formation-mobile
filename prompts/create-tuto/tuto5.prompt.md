@@ -1,63 +1,75 @@
-### Contexte  
+### **Contexte**  
 
-Solicode, un centre de formation affilié à l'OFPPT, met en œuvre une pédagogie active orientée projets. Chaque semaine de formation est articulée autour d’un projet qui inclut plusieurs livrables, tous présentés en fin de semaine.  
+Solicode, centre de formation partenaire de l’OFPPT, mise sur une pédagogie active basée sur des projets hebdomadaires. Chaque semaine, les apprenants doivent livrer plusieurs productions :  
 
-Les livrables hebdomadaires comprennent :  
-- Le code source,  
-- Une présentation,  
-- Un rapport détaillé,  
-- Un tutoriel pour réaliser le prototype,  
-- Un prototype concret,  
-- Un mini-projet complémentaire.  
+- **Code source**,  
+- **Présentation**,  
+- **Rapport détaillé**,  
+- **Tutoriel de réalisation**,  
+- **Prototype final**,  
+- **Mini-projet complémentaire**.  
 
-**Particularité :** Les sessions alternent entre le développement mobile (Android avec Kotlin) et le framework Laravel.
+Les cursus alternent entre **développement mobile (Android avec Kotlin)** et **développement web avec Laravel**.  
 
----
+Nous projetons de concevoir une formation complète dédiée au **développement Android avec Jetpack Compose**, organisée en tutoriels progressifs et mini-projets pratiques.  
 
-### Rôle  
+---  
 
-Vous êtes un formateur expérimenté (10 ans) en développement mobile, avec une spécialisation dans Android et Kotlin. Votre objectif principal est d’accompagner les apprenants dans la maîtrise des principes fondamentaux et avancés du développement Android.
+### **Votre rôle**  
 
----
+Vous êtes un formateur expérimenté, fort de 10 années d'expertise en **développement Android et Kotlin**. Votre mission est de guider les apprenants dans l'acquisition des concepts essentiels et avancés du développement mobile.  
 
-### Objectifs  
+---  
 
-1. **Création de tutoriels didactiques** pour l’apprentissage progressif du développement mobile.  
-2. **Intégration d’un mini-projet pratique** à la fin de chaque module d’apprentissage.  
-3. **Conception d’un projet final** pour évaluer les compétences acquises.  
-4. Basculer les tutoriels autour du guide officiel d’Android Studio : **Principes de base d'Android avec Compose**.  
+### **Objectifs pédagogiques**  
 
----
+1. Rédiger des tutoriels structurés et progressifs pour enseigner le développement Android.  
+2. Proposer un mini-projet à la fin de chaque module pour renforcer les acquis.  
+3. Concevoir un projet final intégrant l’ensemble des compétences abordées.  
+4. S’appuyer sur les recommandations officielles d’Android Studio et utiliser **Jetpack Compose** comme outil principal.  
+5. Intégrer une explication théorique pour chaque nouveau concept présenté.  
 
-### Contraintes  
+---  
 
-1. Les tutoriels doivent culminer avec la réalisation d’une application fonctionnelle de gestion de tâches (TODO liste).  
-2. **Code complet et fonctionnel :** Chaque tutoriel doit inclure du code prêt à exécuter dans Android Studio.  
-3. **Clarté pédagogique :**  
-   - Indiquez les fichiers à modifier dans le projet.  
-   - Commentez chaque bloc de code pour en expliquer le fonctionnement.  
-   - Introduisez chaque partie de code avant son utilisation.  
-   - Évitez de réexpliquer des notions déjà couvertes dans les tutoriels précédents.  
-4. Utilisation obligatoire de **Jetpack Compose** pour tous les tutoriels.
+### **Contraintes et exigences**  
 
+1. **Application cible :** Développer une application fonctionnelle de gestion de tâches (TODO list) tout au long des tutoriels.  
+2. **Qualité du code :** Fournir un code exécutable dans Android Studio, bien structuré et commenté.  
+3. **Approche pédagogique :**  
+   - Identifier les fichiers et sections modifiés.  
+   - Expliquer chaque concept avant son implémentation.  
+   - Éviter les répétitions inutiles des notions déjà couvertes.  
+4. **Technologies requises :**  
+   - Utilisation obligatoire de **Jetpack Compose** et de **Material 3** (`androidx.compose.material3`).  
+5. **Mini-projets :** Reposant uniquement sur les notions déjà enseignées.  
+6. **Gestion des dépendances :** Utiliser un catalogue clair dans `build.gradle`, par exemple :  
+   ```kotlin  
+   implementation(libs.androidx.navigation.compose)  
+   ```  
 
-- Dans le mini projet il faut utiliser seulement les notion aborder dans les tuto précédents et les modules précédentes
----
+- Définir une architecture claire pour les dossiers et fichiers de chaque tutoriel.  
+- le tutoriel ne doit pas contenire le mini-projet , il sera présenter dans dans un chapitre nommé : mini-projet.
 
-### Plan des tutoriels  
+---  
 
-1. Introduction au développement Android et Jetpack Compose.  
-2. Comprendre les concepts fondamentaux : Layouts et Widgets.  
-3. Gestion des états avec Compose : Création d’une TODO liste simple.  
-4. Interaction utilisateur et navigation : Ajout d’un système de tâches.  
-5. Persistance des données : Sauvegarder les tâches avec Room.  
-6. Optimisation et déploiement de l’application finale.  
+### **Format attendu pour un tutoriel**  
 
----
+---  
+# Tutoriel X : [Titre du tutoriel]  
 
-Si vous voulez, je peux commencer directement par l'élaboration d'un des tutoriels ou compléter un élément déjà existant dans votre formation.
+## Objectif pédagogique  
+## Concepts abordés  
+## Explication théorique  
+## Étape 1  
+## Étape 2  
+## Étape N  
+## Exercice  
+## Conclusion  
 
-### Plan des tutoriels :
+---  
+
+### **Plan des tutoriels**  
+
 ```
 
 ### **Module 1 : Découverte d'Android avec Kotlin et Jetpack Compose**  
@@ -93,12 +105,12 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 - **Résumé :** Maîtriser les concepts avancés pour écrire un code robuste.
 
 #### **Tutoriel 5 : Interaction avec l'interface utilisateur**  
-- **Concepts abordés :** Gestion des clics, ajout de boutons, état dans Compose.  
+- **Concepts abordés :** Gestion des clics, ajout de boutons.
 - **Tags :** UI, Gestion de l'état, Jetpack Compose.  
 - **Résumé :** Créer des applications interactives et réactives.
 
 #### **Tutoriel 6 : Gestion de l’état dans Jetpack Compose**  
-- **Concepts abordés :** États, immutabilité, introduction aux ViewModels.  
+- **Concepts abordés :** États, immutabilité
 - **Tags :** État, Jetpack Compose.  
 - **Résumé :** Contrôler l'état et la réactivité de l'application.
 
@@ -140,10 +152,22 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 - **Tags :** Navigation, Jetpack Compose.  
 - **Résumé :** Créer des applications multi-écrans et gérer la navigation.
 
-#### **Tutoriel 11 : Introduction à l’architecture MVVM**  
-- **Concepts abordés :** Cycle de vie, ViewModel, StateFlow.  
-- **Tags :** Architecture, ViewModel.  
-- **Résumé :** Structurer l'application pour une meilleure gestion des données.
+#### **Tutoriel 10+ : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
+- **Concepts abordés :** Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
+- **Tags :** 
+- **Résumé :** 
+
+#### **Tutoriel 11 : Cycle de vie d'une activité Android**  
+- **Concepts abordés :** Cycle de vie d'une activité Android, journalisation avec Logcat, gestion de l'état avec `rememberSaveable`, impact des modifications de configuration.  
+- **Tags :** Cycle de vie, Android, Logcat, état, rememberSaveable.  
+- **Résumé :** Comprendre et implémenter le cycle de vie d'une activité Android, diagnostiquer les transitions entre les états grâce à la journalisation, et gérer les modifications de configuration pour préserver les données utilisateur.
+
+
+#### **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose**  
+- **Concepts abordés :** Introduction à ViewModel, gestion de l'état avec `StateFlow`, séparation des responsabilités entre UI et logique métier, immutabilité de l'état, et persistance de l'état lors des changements de configuration.  
+- **Tags :** ViewModel, Jetpack Compose, StateFlow, UDF, gestion d'état.  
+- **Résumé :** Découvrir comment utiliser ViewModel pour gérer l'état dans une application Jetpack Compose, tout en suivant un flux de données unidirectionnel. Ce tutoriel explore la persistance de l'état, l'immuabilité, et la gestion des événements utilisateur pour construire des applications réactives et robustes.  
+
 
 #### **Mini-projet : Application multi-écrans My City**  
 - **Description :** Concevoir une application avec plusieurs écrans de navigation.  
@@ -154,7 +178,7 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 ### **Module 5 : Connexion à Internet et récupération de données**  
 **Objectif pédagogique :** Apprendre à récupérer des données en ligne et les afficher.
 
-#### **Tutoriel 12 : Récupération de données via API REST**  
+#### **Tutoriel 13 : Récupération de données via API REST**  
 - **Concepts abordés :** Requêtes HTTP, coroutines, JSON.  
 - **Tags :** API, REST, Coroutines.  
 - **Résumé :** Connecter l'application à des sources de données en ligne.
@@ -168,7 +192,7 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
 ### **Module 6 : Persistance des données locales**  
 **Objectif pédagogique :** Stocker les données localement à l'aide de Room et DataStore.
 
-#### **Tutoriel 13 : Utilisation de Room pour la persistance**  
+#### **Tutoriel 14 : Utilisation de Room pour la persistance**  
 - **Concepts abordés :** Bases de données SQLite, DAO, Room.  
 - **Tags :** Persistance, Room, SQLite.  
 - **Résumé :** Sauvegarder et récupérer des données localement.
@@ -190,12 +214,223 @@ Si vous voulez, je peux commencer directement par l'élaboration d'un des tutori
   - Possibilité de connexion à une API pour synchroniser les tâches  
 
 
-```
-
+```  
 
 
 ## **Travail à réaliser :**  
 
-rédiger le Tutoriel 5 : Interaction avec l'interface utilisateur
+**Refonte et amélioration du Tutoriel 5 : Interaction avec l'interface utilisateur**
+
+- **Mise à jour de l'objectif du tutoriel** : Réviser et clarifier l'objectif principal pour mettre davantage l'accent sur la gestion de l'état dans Jetpack Compose. 
+
+- **Ajout du concept d'état** : Intégrer une section dédiée à l'introduction et à l'explication du concept d'état, essentiel pour la construction d'interfaces interactives.
+
+- **Explication détaillée de l'état (State) dans Jetpack Compose** : Définir clairement ce qu'est l'état (State), son rôle, et son importance dans la gestion des données dynamiques des interfaces utilisateur.
+
+- **Présentation approfondie de `remember`** : Expliquer le fonctionnement de `remember`, son utilité pour conserver les données en mémoire à travers les recompositions, et son importance dans l'optimisation des performances.
+
+- **Analyse des risques de ne pas utiliser `remember`** : Illustrer les problèmes potentiels liés à l'absence de `remember`, tels que la perte de données ou les comportements imprévus lors des recompositions de l'interface utilisateur. Utiliser des exemples concrets pour rendre cette notion plus accessible. 
+
+### Version actuel : 
+
+```md
+---
+reference: m2-créer-interface-utilisateur-tuto5
+slug: tuto5
+module_reference: mobile
+part_reference: m2-créer-interface-utilisateur
+concept_reference: ''
+title: Tutoriel 5 - Interaction avec UI v1.1
+description: ''
+order: 94
+directory: m2-créer-interface-utilisateur
+permalink: m2-créer-interface-utilisateur/tuto5
+layout: chapters
+---
+
+
+# Tutoriel 5 : Interaction avec l'interface utilisateur  
+
+## Objectif pédagogique  
+Apprendre à interagir avec les éléments de l'interface utilisateur dans Jetpack Compose, tout en maîtrisant la gestion des événements comme les clics.  
+
+---
+
+## Concepts abordés  
+1. **Gestion des événements utilisateur :**  
+   - Capturer les clics sur un bouton ou d'autres composants.  
+   - Modifier l'état de l'interface utilisateur en réponse aux interactions.  
+
+2. **Composants interactifs dans Jetpack Compose :**  
+   - Boutons, TextFields, Checkboxes, etc.  
+
+---
+
+## Explication théorique  
+
+### **1. Gestion des événements dans Compose**  
+Dans Jetpack Compose, les événements utilisateur sont gérés via des lambda expressions. Un état mutable est utilisé pour refléter les changements d'interface.  
+
+Exemple basique :  
+```kotlin  
+@Composable  
+fun Greeting() {  
+    var text by remember { mutableStateOf("Bonjour !") }  
+  
+    Button(onClick = { text = "Clique détecté !" }) {  
+        Text(text)  
+    }  
+}  
+```  
+Ici, `remember` permet de maintenir la valeur d'état entre les recompositions.  
+
+---
+
+### **2. Introduction à quelques composants interactifs**  
+
+#### **Boutons :**  
+Permettent d'exécuter une action lorsqu'ils sont cliqués.  
+```kotlin  
+Button(onClick = { /* Action */ }) {  
+    Text("Cliquez ici")  
+}  
+```  
+
+#### **TextFields :**  
+Utilisés pour la saisie de texte par l'utilisateur.  
+```kotlin  
+var text by remember { mutableStateOf("") }  
+TextField(value = text, onValueChange = { text = it })  
+```  
+
+#### **Checkboxes :**  
+Représentent des options activables/désactivables.  
+```kotlin  
+var checked by remember { mutableStateOf(false) }  
+Checkbox(checked = checked, onCheckedChange = { checked = it })  
+```  
+
+---
+
+## Étapes pratiques  
+
+### **Étape 1 : Ajouter un bouton interactif**  
+1. Créez un fichier `InteractiveScreen.kt` dans le dossier `ui/screens`.  
+2. Ajoutez un composable qui affiche un bouton et un texte mis à jour en fonction des clics.  
+
+Code :  
+```kotlin  
+@Composable  
+fun InteractiveButton() {  
+    var count by remember { mutableStateOf(0) }  
+    Column(horizontalAlignment = Alignment.CenterHorizontally) {  
+        Text("Clics : $count")  
+        Button(onClick = { count++ }) {  
+            Text("Cliquez-moi")  
+        }  
+    }  
+}  
+```  
+
+---
+
+### **Étape 2 : Utiliser un TextField pour capturer du texte**  
+Ajoutez un composable pour capturer et afficher une chaîne de caractères saisie par l'utilisateur.  
+
+Code :  
+```kotlin  
+@Composable  
+fun TextInputExample() {  
+    var text by remember { mutableStateOf("") }  
+    Column {  
+        TextField(value = text, onValueChange = { text = it }, label = { Text("Entrez votre nom") })  
+        Text("Bonjour, $text !")  
+    }  
+}  
+```  
+
+---
+
+### **Étape 3 : Combiner plusieurs composants**  
+Créez une interface interactive qui combine un TextField, un Button, et un Checkbox.  
+
+Code :  
+```kotlin  
+@Composable  
+fun InteractiveForm() {  
+    var name by remember { mutableStateOf("") }  
+    var isSubscribed by remember { mutableStateOf(false) }  
+  
+    Column {  
+        TextField(value = name, onValueChange = { name = it }, label = { Text("Nom") })  
+        Row(verticalAlignment = Alignment.CenterVertically) {  
+            Checkbox(checked = isSubscribed, onCheckedChange = { isSubscribed = it })  
+            Text("Je veux recevoir des notifications.")  
+        }  
+        Button(onClick = {  
+            // Action après le clic  
+        }) {  
+            Text("Soumettre")  
+        }  
+    }  
+}  
+```  
+
+---
+
+## Exercice pratique  
+
+### **Création d’une mini-formulaire utilisateur**  
+**Objectif :** Développez une interface permettant à l'utilisateur d'entrer son nom et d'indiquer s'il accepte les conditions générales.  
+
+- **Éléments requis :**  
+  1. TextField pour capturer le nom.  
+  2. Checkbox pour l'acceptation des conditions.  
+  3. Bouton pour valider l'enregistrement.  
+  4. Affichage d’un message de confirmation après validation.  
+
+#### **Solution attendue :**  
+```kotlin  
+@Composable  
+fun UserForm() {  
+    var name by remember { mutableStateOf("") }  
+    var accepted by remember { mutableStateOf(false) }  
+    var message by remember { mutableStateOf("") }  
+  
+    Column {  
+        TextField(value = name, onValueChange = { name = it }, label = { Text("Votre nom") })  
+        Row(verticalAlignment = Alignment.CenterVertically) {  
+            Checkbox(checked = accepted, onCheckedChange = { accepted = it })  
+            Text("J'accepte les conditions générales")  
+        }  
+        Button(onClick = {  
+            message = if (accepted) "Merci, $name, vous êtes inscrit !" else "Veuillez accepter les conditions."  
+        }) {  
+            Text("S'inscrire")  
+        }  
+        if (message.isNotEmpty()) {  
+            Text(message)  
+        }  
+    }  
+}  
+```  
+
+---
+
+## Conclusion  
+Ce tutoriel vous a introduit aux interactions de base avec l’interface utilisateur dans Jetpack Compose. Vous êtes maintenant capable de gérer les clics et d'intégrer plusieurs composants interactifs dans une application.  
+
+---  
+
+### **Mini-projet : Application de calcul de pourboire**  
+**Description :** Créez une application permettant à l'utilisateur de :  
+1. Saisir le montant de la facture.  
+2. Sélectionner un pourcentage de pourboire.  
+3. Calculer le montant total et afficher les résultats.  
+
+---  
+
+Ce tutoriel et son exercice pratique fourniront une base solide pour aborder la gestion d’état et d’interactions dans une application Android moderne.
+```
 
 
