@@ -200,25 +200,197 @@ En tant que formateur expérimenté (10 ans) spécialisé en développement Andr
 
 ### **Travail à réaliser :**  
 
-rédiger le **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose** 
+Modifier le **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose** en intégrant les éléments suivants :  
+
+1. **Proposer une architecture de fichiers et dossiers adaptée** pour le projet final de Todo List.  
+   - Cette organisation sera utilisée dès maintenant pour habituer les apprenants à travailler de manière structurée.  
+
+2. **Expliquer les concepts liés à ViewModel et StateFlow** :  
+   - Pourquoi utiliser ViewModel avec StateFlow pour gérer l'état ?  
+   - Quels sont les problèmes potentiels si l'on utilise seulement ViewModel sans StateFlow ?  
+   - Pourquoi privilégier ViewModel plutôt que `remember` et `mutableStateOf` ?  
+
+### Référence du tutoriel actuel :  
+
+```
+# Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose
+
+## **Introduction**
+
+Dans ce tutoriel, nous allons explorer l’utilisation de **ViewModel** pour la gestion d’état dans une application Jetpack Compose. Nous apprendrons comment séparer la logique métier de l'interface utilisateur, mettre en œuvre un flux de données unidirectionnel (UDF), et utiliser **StateFlow** pour exposer des états immuables.
+
+---
+
+## **Objectifs**
+
+1. Comprendre l'importance de **ViewModel** dans l'architecture Android.
+2. Séparer la logique métier de l’interface utilisateur.
+3. Implémenter un modèle de flux de données unidirectionnel (**UDF**).
+4. Construire une application Jetpack Compose simple où l'état est conservé lors des changements de configuration.
+
+---
+
+## **Préparation**
+
+### **Dépendances**
+Ajoutez les dépendances suivantes dans le fichier `build.gradle` :
+
+````
+implementation(libs.androidx.lifecycle.viewmodel.compose)
+implementation(libs.kotlinx.coroutines.android)
+````
 
 
-#### **Objectifs pédagogiques**
+Ces dépendances incluent l’intégration de ViewModel avec Jetpack Compose et les coroutines Kotlin pour la gestion des états.
 
-1. Comprendre l'importance de **ViewModel** dans la gestion de l'état pour des applications Android.
-2. Apprendre à séparer la logique métier de l'interface utilisateur en suivant les bonnes pratiques de l'architecture.
-3. Implémenter un modèle de **flux de données unidirectionnel (UDF)** dans une application Jetpack Compose.
-4. Construire une application simple où l'état est conservé lors des changements de configuration.
 
-Essayer d'ajouter ces éléments au tutoriel 
+## **Concepts Clés**
 
-- Présentation du rôle de **ViewModel** dans l'architecture Android.
-- Définition de l'état dans une application Compose.
-- Concept d'immuabilité pour un état prévisible et facile à gérer.
-- Ajout des dépendances nécessaires (ex. `lifecycle-viewmodel-compose`).
-- Introduction de l’API **StateFlow** pour exposer l’état à l’interface utilisateur.
-- Définition d’un état initial simple (exemple : un compteur).
-- Mise à jour de l'état à partir des actions utilisateur.
-- Présentation du modèle UDF (Événement → Modification d'État → UI).
+### **1. Rôle de ViewModel**
+ViewModel est une classe spéciale qui conserve les données d’une application lors des changements de configuration (par exemple, une rotation d’écran). Elle permet :
 
+- De séparer la logique métier de l’interface utilisateur.
+- De préserver l’état des données pendant la durée de vie d’une activité ou d’un fragment.
+
+### **2. Flux de données unidirectionnel (UDF)**
+Dans UDF, l’état est généré par la logique métier et exposé à l’interface utilisateur via une source unique (ex. `StateFlow`). Ce modèle garantit :
+
+- Une meilleure prévisibilité des états.
+- Une immuabilité pour minimiser les erreurs.
+
+### **3. StateFlow pour l’état réactif**
+StateFlow est une API de Kotlin Coroutines qui permet de suivre les changements d’état et de les notifier à l’interface utilisateur. Il est idéal pour une application Compose car :
+
+- Il gère automatiquement les abonnements.
+- Il est compatible avec les cycles de vie des composants Android.
+
+---
+
+## **Mise en œuvre**
+
+### **1. Création de ViewModel**
+
+Dans ce tutoriel, nous allons implémenter une liste simple d’éléments où les utilisateurs peuvent ajouter et supprimer des tâches.
+
+#### **Code : ViewModel**
+
+```kotlin
+import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+
+class TaskViewModel : ViewModel() {
+
+    private val _tasks = MutableStateFlow(listOf<String>())
+    val tasks: StateFlow<List<String>> = _tasks
+
+    fun addTask(task: String) {
+        _tasks.value = _tasks.value + task
+    }
+
+    fun removeTask(task: String) {
+        _tasks.value = _tasks.value - task
+    }
+}
+```
+
+- `MutableStateFlow` gère l’état mutable des tâches.
+- La propriété immuable `tasks` expose cet état à l’interface utilisateur.
+
+---
+
+### **2. Intégration avec Jetpack Compose**
+
+Créons une interface simple pour afficher et interagir avec la liste des tâches.
+
+#### **Code : Composable principal**
+
+```kotlin
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun TaskScreen(viewModel: TaskViewModel = viewModel()) {
+    val tasks = viewModel.tasks.collectAsState()
+    val newTask = remember { mutableStateOf("") }
+
+    Column(modifier = Modifier.padding(16.dp)) {
+        // Input field for new task
+        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            BasicTextField(
+                value = newTask.value,
+                onValueChange = { newTask.value = it },
+                modifier = Modifier.weight(1f)
+            )
+            Button(onClick = {
+                if (newTask.value.isNotBlank()) {
+                    viewModel.addTask(newTask.value)
+                    newTask.value = ""
+                }
+            }) {
+                Text("Add")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Task list
+        tasks.value.forEach { task ->
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                Text(task)
+                Button(onClick = { viewModel.removeTask(task) }) {
+                    Text("Remove")
+                }
+            }
+        }
+    }
+}
+
+@Preview
+@Composable
+fun PreviewTaskScreen() {
+    TaskScreen()
+}
+```
+
+---
+
+## **Analyse du code**
+
+1. **Collecte des états** : La méthode `collectAsState()` surveille les changements de `StateFlow` dans ViewModel.
+2. **Entrée utilisateur** : Un champ de texte permet à l’utilisateur de saisir une nouvelle tâche.
+3. **Affichage des tâches** : Les tâches sont affichées dynamiquement dans une colonne avec des options pour les supprimer.
+
+---
+
+## **Points Clés**
+
+- **Immuabilité** : L’état est immuable (éviter les bugs liés aux modifications imprévisibles).
+- **ViewModel évite la perte de données** : Les tâches restent présentes lors des changements de configuration.
+- **Jetpack Compose** simplifie la liaison entre l'état et l'interface utilisateur.
+
+---
+
+## **Exercice Pratique**
+
+Ajoutez une fonctionnalité pour marquer une tâche comme "terminée" avec un indicateur visuel (ex. texte barré).
+
+---
+
+## **Conclusion**
+
+Avec ViewModel et StateFlow, la gestion de l’état dans Jetpack Compose devient claire, prédictive et efficace. Cela constitue une base solide pour des applications Android modernes et réactives.
+
+
+```
 

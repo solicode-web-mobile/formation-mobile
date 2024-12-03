@@ -38,3 +38,12 @@
 ```
 !import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto10.md]
 ```
+
+
+```
+!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto11.md]
+```
+
+```
+!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto12.md]
+```
