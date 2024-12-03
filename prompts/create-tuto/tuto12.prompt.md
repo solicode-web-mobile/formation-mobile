@@ -1,3 +1,57 @@
+### **Contexte**  
+
+Solicode, un centre de formation affilié à l'OFPPT, applique une pédagogie active orientée projets. Chaque semaine de formation est structurée autour d’un projet intégrant plusieurs livrables, présentés à la fin de la semaine.  
+
+**Livrables hebdomadaires :**  
+- Code source,  
+- Présentation,  
+- Rapport détaillé,  
+- Tutoriel pour réaliser le prototype,  
+- Prototype concret,  
+- Mini-projet complémentaire.  
+
+**Particularité :** Les formations alternent entre développement mobile (Android avec Kotlin) et développement web avec Laravel.  
+
+---
+
+### **Votre rôle**  
+
+En tant que formateur expérimenté (10 ans) spécialisé en développement Android avec Kotlin, votre mission est d’accompagner les apprenants dans la maîtrise des concepts clés et avancés du développement mobile.  
+
+---
+
+### **Objectifs pédagogiques**  
+
+1. Concevoir **des tutoriels progressifs et didactiques** pour apprendre le développement Android.  
+2. Proposer **un mini-projet pratique** à la fin de chaque module pour renforcer les acquis.  
+3. Préparer un **projet final évaluatif** mettant en application l’ensemble des compétences.  
+4. S’appuyer sur le guide officiel d’Android Studio et utiliser **Jetpack Compose** comme base des tutoriels.  
+
+---
+
+### **Contraintes et exigences**  
+
+1. **Application cible :** Chaque tutoriel doit contribuer à créer une application fonctionnelle de gestion de tâches (TODO liste).  
+2. **Code clair et complet :** Fournir du code prêt à exécuter dans Android Studio.  
+3. **Approche pédagogique :**  
+   - Identifier les fichiers et sections à modifier.  
+   - Expliquer chaque bloc de code à l’aide de commentaires détaillés.  
+   - Introduire chaque concept avant de le coder.  
+   - Éviter de répéter les notions déjà couvertes dans les tutoriels précédents.  
+4. **Utilisation obligatoire de Jetpack Compose** dans toutes les implémentations.  
+5. Les mini-projets doivent uniquement utiliser les notions vues dans les tutoriels et modules précédents.  
+6. **Structure des dépendances :** Utiliser le **catalogue de bibliothèques** dans `build.gradle`, par exemple :  
+   ```kotlin  
+   implementation(libs.androidx.navigation.compose)  
+   ```  
+
+- Utilisation de androidx.compose.material3 : Material 3
+
+---
+
+### **Plan des tutoriels**  
+
+```
 
 ### **Module 1 : Découverte d'Android avec Kotlin et Jetpack Compose**  
 **Objectif pédagogique :** Familiariser les apprenants avec Kotlin, Android Studio, et Jetpack Compose pour créer leur première application simple.
@@ -139,4 +193,32 @@
   - Navigation entre écrans  
   - Persistance locale avec Room  
   - Possibilité de connexion à une API pour synchroniser les tâches  
+
+
+```
+
+
+### **Travail à réaliser :**  
+
+rédiger le **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose** 
+
+
+#### **Objectifs pédagogiques**
+
+1. Comprendre l'importance de **ViewModel** dans la gestion de l'état pour des applications Android.
+2. Apprendre à séparer la logique métier de l'interface utilisateur en suivant les bonnes pratiques de l'architecture.
+3. Implémenter un modèle de **flux de données unidirectionnel (UDF)** dans une application Jetpack Compose.
+4. Construire une application simple où l'état est conservé lors des changements de configuration.
+
+Essayer d'ajouter ces éléments au tutoriel 
+
+- Présentation du rôle de **ViewModel** dans l'architecture Android.
+- Définition de l'état dans une application Compose.
+- Concept d'immuabilité pour un état prévisible et facile à gérer.
+- Ajout des dépendances nécessaires (ex. `lifecycle-viewmodel-compose`).
+- Introduction de l’API **StateFlow** pour exposer l’état à l’interface utilisateur.
+- Définition d’un état initial simple (exemple : un compteur).
+- Mise à jour de l'état à partir des actions utilisateur.
+- Présentation du modèle UDF (Événement → Modification d'État → UI).
+
 
