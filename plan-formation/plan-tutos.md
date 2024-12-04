@@ -46,7 +46,9 @@
 - **Tags :** Gestion de l'état, Réactivité, Jetpack Compose, Coroutines.  
 - **Résumé :** Apprendre à gérer efficacement l’état et les flux de données pour construire des applications réactives et modernes avec Jetpack Compose.  
   
-
+#### **Mini-projet-2 : Application de gestion de tâches simplifiée**  
+- **Description :** Développer une application permettant d’ajouter, de marquer comme terminée, et de supprimer des tâches en utilisant la gestion d’état locale avec `rememberSaveable`. L’application se concentre sur les interactions utilisateur et l’état des tâches sans persistance locale ni navigation multi-écrans.  
+- **Lien avec le projet final :** Cette application introduit les bases de la gestion de l'état et de l’interactivité nécessaires pour une To-Do List complète. Elle pose les fondations pour intégrer les fonctionnalités avancées dans les prochains modules.  
 
 ---
 
