@@ -13,13 +13,18 @@
 - **Résumé :** Installer Android Studio et préparer l'environnement de développement.
 
 #### **Tutoriel 3 : Création de l’interface avec Jetpack Compose**  
-- **Concepts abordés :** Composants de base (Text, Image, Button), structuration de la mise en page.  
+- **Concepts abordés :** Composants de base (Text, Image, Button), structuration de la mise en page.
 - **Tags :** Jetpack Compose, Interface utilisateur.  
-- **Résumé :** Construire une interface simple avec Compose.
+- **Résumé :** Construire une interface simple avec Compose avec bouton click sans état
+
+#### **Tutoriel 3Plus : Boutons Interactifs avec Jetpack Compose**  
+- **Concepts abordés :** Création de boutons interactifs, gestion des Intents, actions utilisateur simples.  
+- **Tags :** Jetpack Compose, Android, Intents, UI Interactive.  
+- **Résumé :** Apprenez à créer des boutons interactifs dans une interface Compose pour ouvrir un site web, envoyer un email ou appeler un numéro de téléphone, tout en personnalisant leur apparence et leur comportement.  
 
 #### **Mini-projet : Carte de visite interactive**  
-- **Description :** Créer une application de carte de visite dynamique.  
-- **Lien avec le projet final :** Introduction aux composants d'interface et à la mise en page.
+- **Description :** Créer une application de carte de visite dynamique. L'application affichera des informations personnelles stylisées (nom, profession, coordonnées) et inclura des boutons interactifs permettant des actions simples, comme ouvrir un site web, envoyer un email ou appeler un numéro de téléphone.  
+- **Lien avec le projet final :** Introduction aux composants d'interface utilisateur, à la mise en page avec Jetpack Compose, et aux interactions utilisateur.
 
 ---
 
@@ -41,9 +46,6 @@
 - **Tags :** État, Jetpack Compose.  
 - **Résumé :** Contrôler l'état et la réactivité de l'application.
 
-#### **Mini-projet : Application de calcul de pourboire**  
-- **Description :** Développer une application pour calculer les pourboires avec gestion d'état.  
-- **Lien avec le projet final :** Comprendre les bases de la gestion de l'état pour une To-Do List.
 
 ---
 
@@ -90,9 +92,6 @@
 - **Tags :** Architecture, ViewModel.  
 - **Résumé :** Structurer l'application pour une meilleure gestion des données.
 
-#### **Mini-projet : Application multi-écrans My City**  
-- **Description :** Concevoir une application avec plusieurs écrans de navigation.  
-- **Lien avec le projet final :** Structurer la To-Do List en plusieurs vues.
 
 ---
 
@@ -104,9 +103,6 @@
 - **Tags :** API, REST, Coroutines.  
 - **Résumé :** Connecter l'application à des sources de données en ligne.
 
-#### **Mini-projet : Application Bookshelf**  
-- **Description :** Développer une bibliothèque virtuelle avec des données issues d’une API.  
-- **Lien avec le projet final :** Intégrer des tâches récupérées depuis un serveur.
 
 ---
 
@@ -118,9 +114,6 @@
 - **Tags :** Persistance, Room, SQLite.  
 - **Résumé :** Sauvegarder et récupérer des données localement.
 
-#### **Mini-projet : Application de gestion d’horaires de bus**  
-- **Description :** Utiliser Room pour gérer une base de données locale.  
-- **Lien avec le projet final :** Sauvegarder les tâches dans une base de données locale.
 
 ---
 
