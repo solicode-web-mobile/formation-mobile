@@ -16,5 +16,7 @@
 			"path": "../projets/_chapters/mobile/m4-navigation-architecture"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "formation-mobile"
+	}
 }

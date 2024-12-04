@@ -198,202 +198,199 @@ En tant que formateur expérimenté (10 ans) spécialisé en développement Andr
 ```
 
 
-## **Travail à réaliser :**  
+### **Travail à réaliser :**  
 
-Modifier le Tutoriel 4 : Principes avancés de Kotlin
+Modifier le **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose** en intégrant les éléments suivants :  
 
-Essayer de voir ces deux parties en détail 
+1. **Proposer une architecture de fichiers et dossiers adaptée** pour le projet final de Todo List.  
+   - Cette organisation sera utilisée dès maintenant pour habituer les apprenants à travailler de manière structurée.  
 
+2. **Expliquer les concepts liés à ViewModel et StateFlow** :  
+   - Pourquoi utiliser ViewModel avec StateFlow pour gérer l'état ?  
+   - Quels sont les problèmes potentiels si l'on utilise seulement ViewModel sans StateFlow ?  
+   - Pourquoi privilégier ViewModel plutôt que `remember` et `mutableStateOf` ?  
 
-3. **Classes et objets** : Constructeurs, propriétés, méthodes.
-4. **Expressions lambdas** : Définition et usage.
+### Référence du tutoriel actuel :  
 
-### Version actuel : 
-
-```md
----
-reference: m2-créer-interface-utilisateur-tuto4
-slug: tuto4
-module_reference: mobile
-part_reference: m2-créer-interface-utilisateur
-concept_reference: ''
-title: tuto4
-description: ''
-order: 93
-directory: m2-créer-interface-utilisateur
-permalink: m2-créer-interface-utilisateur/tuto4
-layout: chapters
----
-
-
-# Tutoriel 4 : Principes avancés de Kotlin
-
-## Objectif pédagogique
-Ce tutoriel vise à approfondir les concepts avancés de Kotlin pour permettre aux apprenants d'écrire un code plus robuste, réutilisable et élégant. Les notions abordées incluent les instructions conditionnelles, la gestion de la nullabilité, les classes et objets, ainsi que les expressions lambdas.
-
----
-
-## Prérequis
-Avant de commencer ce tutoriel, assurez-vous d'avoir compris les bases de Kotlin, notamment :
-- Les variables,
-- Les types de données,
-- Les fonctions simples.
-
----
-
-## Concepts abordés
-1. **Instructions conditionnelles** : If/else, when.
-2. **Nullabilité et opérateurs de sécurité** : Safe call, Elvis operator.
-3. **Classes et objets** : Constructeurs, propriétés, méthodes.
-4. **Expressions lambdas** : Définition et usage.
-
----
-
-## Partie 1 : Instructions conditionnelles
-
-### If/Else
-L'instruction `if` fonctionne comme une expression en Kotlin. Elle peut renvoyer une valeur.
-
-#### Exemple :
-```kotlin
-val a = 10
-val b = 20
-val max = if (a > b) a else b
-println("Le maximum est : $max")
 ```
+# Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose
 
-### When
-L'instruction `when` remplace les longues séries de `if/else`.
+## **Introduction**
 
-#### Exemple :
+Dans ce tutoriel, nous allons explorer l’utilisation de **ViewModel** pour la gestion d’état dans une application Jetpack Compose. Nous apprendrons comment séparer la logique métier de l'interface utilisateur, mettre en œuvre un flux de données unidirectionnel (UDF), et utiliser **StateFlow** pour exposer des états immuables.
+
+---
+
+## **Objectifs**
+
+1. Comprendre l'importance de **ViewModel** dans l'architecture Android.
+2. Séparer la logique métier de l’interface utilisateur.
+3. Implémenter un modèle de flux de données unidirectionnel (**UDF**).
+4. Construire une application Jetpack Compose simple où l'état est conservé lors des changements de configuration.
+
+---
+
+## **Préparation**
+
+### **Dépendances**
+Ajoutez les dépendances suivantes dans le fichier `build.gradle` :
+
+````
+implementation(libs.androidx.lifecycle.viewmodel.compose)
+implementation(libs.kotlinx.coroutines.android)
+````
+
+
+Ces dépendances incluent l’intégration de ViewModel avec Jetpack Compose et les coroutines Kotlin pour la gestion des états.
+
+
+## **Concepts Clés**
+
+### **1. Rôle de ViewModel**
+ViewModel est une classe spéciale qui conserve les données d’une application lors des changements de configuration (par exemple, une rotation d’écran). Elle permet :
+
+- De séparer la logique métier de l’interface utilisateur.
+- De préserver l’état des données pendant la durée de vie d’une activité ou d’un fragment.
+
+### **2. Flux de données unidirectionnel (UDF)**
+Dans UDF, l’état est généré par la logique métier et exposé à l’interface utilisateur via une source unique (ex. `StateFlow`). Ce modèle garantit :
+
+- Une meilleure prévisibilité des états.
+- Une immuabilité pour minimiser les erreurs.
+
+### **3. StateFlow pour l’état réactif**
+StateFlow est une API de Kotlin Coroutines qui permet de suivre les changements d’état et de les notifier à l’interface utilisateur. Il est idéal pour une application Compose car :
+
+- Il gère automatiquement les abonnements.
+- Il est compatible avec les cycles de vie des composants Android.
+
+---
+
+## **Mise en œuvre**
+
+### **1. Création de ViewModel**
+
+Dans ce tutoriel, nous allons implémenter une liste simple d’éléments où les utilisateurs peuvent ajouter et supprimer des tâches.
+
+#### **Code : ViewModel**
+
 ```kotlin
-val day = 3
-val dayName = when (day) {
-    1 -> "Lundi"
-    2 -> "Mardi"
-    3 -> "Mercredi"
-    else -> "Jour inconnu"
+import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+
+class TaskViewModel : ViewModel() {
+
+    private val _tasks = MutableStateFlow(listOf<String>())
+    val tasks: StateFlow<List<String>> = _tasks
+
+    fun addTask(task: String) {
+        _tasks.value = _tasks.value + task
+    }
+
+    fun removeTask(task: String) {
+        _tasks.value = _tasks.value - task
+    }
 }
-println("Aujourd'hui, c'est : $dayName")
 ```
+
+- `MutableStateFlow` gère l’état mutable des tâches.
+- La propriété immuable `tasks` expose cet état à l’interface utilisateur.
 
 ---
 
-## Partie 2 : Nullabilité et opérateurs de sécurité
+### **2. Intégration avec Jetpack Compose**
 
-### Nullabilité en Kotlin
-Kotlin impose une différenciation stricte entre les types nullable et non-nullable.
+Créons une interface simple pour afficher et interagir avec la liste des tâches.
 
-#### Exemple :
+#### **Code : Composable principal**
+
 ```kotlin
-var name: String? = null
-name = "Solicode"
-```
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.BasicTextField
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
-### Safe Call Operator
-Pour éviter les exceptions `NullPointerException`, utilisez l'opérateur `?.`.
+@Composable
+fun TaskScreen(viewModel: TaskViewModel = viewModel()) {
+    val tasks = viewModel.tasks.collectAsState()
+    val newTask = remember { mutableStateOf("") }
 
-#### Exemple :
-```kotlin
-val length = name?.length
-println("Longueur du nom : $length")
-```
+    Column(modifier = Modifier.padding(16.dp)) {
+        // Input field for new task
+        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+            BasicTextField(
+                value = newTask.value,
+                onValueChange = { newTask.value = it },
+                modifier = Modifier.weight(1f)
+            )
+            Button(onClick = {
+                if (newTask.value.isNotBlank()) {
+                    viewModel.addTask(newTask.value)
+                    newTask.value = ""
+                }
+            }) {
+                Text("Add")
+            }
+        }
 
-### Elvis Operator
-L'opérateur `?:` permet de fournir une valeur par défaut si une variable est `null`.
+        Spacer(modifier = Modifier.height(16.dp))
 
-#### Exemple :
-```kotlin
-val nameLength = name?.length ?: 0
-println("Longueur du nom (par défaut) : $nameLength")
-```
-
----
-
-## Partie 3 : Classes et Objets
-
-### Créer une classe
-
-#### Exemple :
-```kotlin
-class Person(val name: String, var age: Int) {
-    fun greet() {
-        println("Bonjour, je m'appelle $name et j'ai $age ans.")
+        // Task list
+        tasks.value.forEach { task ->
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
+                Text(task)
+                Button(onClick = { viewModel.removeTask(task) }) {
+                    Text("Remove")
+                }
+            }
+        }
     }
 }
 
-val person = Person("Alice", 25)
-person.greet()
-```
-
-### Propriétés calculées
-Vous pouvez définir des propriétés calculées en utilisant `get`.
-
-#### Exemple :
-```kotlin
-class Rectangle(val width: Int, val height: Int) {
-    val area: Int
-        get() = width * height
+@Preview
+@Composable
+fun PreviewTaskScreen() {
+    TaskScreen()
 }
-
-val rect = Rectangle(5, 10)
-println("Aire : ${rect.area}")
 ```
 
 ---
 
-## Partie 4 : Expressions Lambdas
+## **Analyse du code**
 
-### Qu'est-ce qu'une lambda ?
-Une lambda est une fonction anonyme que vous pouvez passer comme paramètre à une autre fonction.
-
-#### Exemple :
-```kotlin
-val numbers = listOf(1, 2, 3, 4, 5)
-val doubled = numbers.map { it * 2 }
-println(doubled)
-```
-
-### Filtrage avec les lambdas
-
-#### Exemple :
-```kotlin
-val evenNumbers = numbers.filter { it % 2 == 0 }
-println(evenNumbers)
-```
+1. **Collecte des états** : La méthode `collectAsState()` surveille les changements de `StateFlow` dans ViewModel.
+2. **Entrée utilisateur** : Un champ de texte permet à l’utilisateur de saisir une nouvelle tâche.
+3. **Affichage des tâches** : Les tâches sont affichées dynamiquement dans une colonne avec des options pour les supprimer.
 
 ---
 
-## Mini-Exercice : Créer une classe "Book"
-1. Créez une classe `Book` avec les propriétés `title`, `author` et `price`.
-2. Ajoutez une méthode `discountedPrice` qui applique une remise au prix.
-3. Créez une liste de livres et filtrez ceux dont le prix est inférieur à 20 €.
+## **Points Clés**
 
-#### Solution suggérée :
-```kotlin
-class Book(val title: String, val author: String, var price: Double) {
-    fun discountedPrice(discount: Double): Double {
-        return price - (price * discount / 100)
-    }
-}
-
-val books = listOf(
-    Book("Kotlin for Beginners", "John Doe", 25.0),
-    Book("Advanced Kotlin", "Jane Smith", 15.0),
-    Book("Compose Mastery", "Alice Brown", 30.0)
-)
-
-val affordableBooks = books.filter { it.price < 20 }
-println("Livres abordables :")
-affordableBooks.forEach { println(it.title) }
-```
+- **Immuabilité** : L’état est immuable (éviter les bugs liés aux modifications imprévisibles).
+- **ViewModel évite la perte de données** : Les tâches restent présentes lors des changements de configuration.
+- **Jetpack Compose** simplifie la liaison entre l'état et l'interface utilisateur.
 
 ---
 
-## Conclusion
-Ce tutoriel a permis de découvrir des notions avancées de Kotlin pour écrire du code plus élégant et performant. Les concepts explorés ici seront indispensables pour les tutoriels suivants, notamment pour gérer les interactions avec l’interface utilisateur et les états dans Jetpack Compose.
+## **Exercice Pratique**
+
+Ajoutez une fonctionnalité pour marquer une tâche comme "terminée" avec un indicateur visuel (ex. texte barré).
+
+---
+
+## **Conclusion**
+
+Avec ViewModel et StateFlow, la gestion de l’état dans Jetpack Compose devient claire, prédictive et efficace. Cela constitue une base solide pour des applications Android modernes et réactives.
 
 
 ```
-
 

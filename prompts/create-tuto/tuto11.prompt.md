@@ -133,13 +133,18 @@ En tant que formateur expérimenté (10 ans) spécialisé en développement Andr
 - **Tags :** Navigation, Jetpack Compose.  
 - **Résumé :** Créer des applications multi-écrans et gérer la navigation.
 
-#### **Tutoriel 11 : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
+#### **Tutoriel 10+ : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
 - **Concepts abordés :** Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
 - **Tags :** 
 - **Résumé :** 
 
+#### **Tutoriel 11 : Cycle de vie d'une activité Android**  
+- **Concepts abordés :** Cycle de vie d'une activité Android, journalisation avec Logcat, gestion de l'état avec `rememberSaveable`, impact des modifications de configuration.  
+- **Tags :** Cycle de vie, Android, Logcat, état, rememberSaveable.  
+- **Résumé :** Comprendre et implémenter le cycle de vie d'une activité Android, diagnostiquer les transitions entre les états grâce à la journalisation, et gérer les modifications de configuration pour préserver les données utilisateur.
 
-#### **Tutoriel 12 : Introduction à l’architecture MVVM**  
+
+#### **Tutoriel 11 : Introduction à l’architecture MVVM**  
 - **Concepts abordés :** Cycle de vie, ViewModel, StateFlow.  
 - **Tags :** Architecture, ViewModel.  
 - **Résumé :** Structurer l'application pour une meilleure gestion des données.
@@ -190,186 +195,56 @@ En tant que formateur expérimenté (10 ans) spécialisé en développement Andr
 
 
 ```
----
-
-### **Résultats attendus pour chaque tutoriel**  
-
-1. Fournir une introduction théorique expliquant les notions clés avant leur utilisation dans le code.  
-2. Inclure un code complet, facile à copier et exécuter dans Android Studio.  
-3. Ajouter des questions ou exercices en fin de tutoriel pour réfléchir à une organisation optimale des fichiers et des classes.  
-4. Réaliser les exemples avec **un minimum de complexité**, adapté au niveau des apprenants.  
-
-
-5. L'emplacement et le nom de chaque fichier et classe à créer dans le projet.  
-6. Une organisation structurée du code en fichiers et dossiers, basée sur une architecture que vous proposerez.  
-7. Ajouter une partie théorique pour expliquer les notions de base aborder dans le tutoriel
-
 
 
 ### **Travail à réaliser :**  
 
-Modifier le tutoriel 11 : 
+Rédiger le **Tutoriel 11 : Cycle de vie d'une activité Android**
 
+en prend en considération les éléments suivants : 
 
-**Version actuelle du tutoriel** :  
-```
-# Tutoriel 11 : Ajouter un NavigationDrawer avec Jetpack Compose
+## Concepts Appris
 
-## Objectif pédagogique
+1. **Cycle de Vie d'une Activité** :
+   - Une activité Android traverse plusieurs états au cours de sa vie : création, démarrage, reprise, pause, arrêt, destruction.
+   - Ces états sont gérés via des méthodes de rappel spécifiques (`onCreate()`, `onStart()`, `onResume()`, etc.).
 
-Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
+2. **Journalisation avec Logcat** :
+   - Utiliser l'API de journalisation d'Android, notamment `Log.d()`, pour suivre les événements du cycle de vie.
+   - Filtrer et visualiser les journaux dans l'outil Logcat d'Android Studio.
 
----
+3. **Impact des Modifications de Configuration** :
+   - Lors de changements comme la rotation de l'écran ou le changement de langue, Android détruit et recrée l'activité.
+   - Les données peuvent être perdues si elles ne sont pas correctement sauvegardées.
 
-## Notions théoriques
-
-Avant de coder, comprenons les concepts clés :
-
-1. **NavigationDrawer :**
-   - Un composant d'interface utilisateur qui permet d'afficher un menu latéral pour la navigation.
-   - S'ouvre généralement via un bouton de menu dans la barre supérieure (*TopAppBar*).
-
-2. **Scaffold et DrawerState :**
-   - **Scaffold** : Un composant qui fournit une structure de base pour organiser les éléments de l'interface (barres d'application, tiroirs, contenu principal).
-   - **DrawerState** : Un état qui contrôle l'ouverture et la fermeture du NavigationDrawer.
-
-3. **NavHost et NavController :**
-   - **NavHost** : Contient la logique de navigation entre les différents écrans.
-   - **NavController** : Gère les actions de navigation et l'état de la pile d'écrans.
+4. **Gestion de l'État avec Compose** :
+   - Utilisation de `remember` pour conserver l'état d'une variable lors de recompositions.
+   - Utilisation de `rememberSaveable` pour préserver l'état pendant les modifications de configuration.
 
 ---
 
-## Mise en place d'un NavigationDrawer
-
-### Étape 2 : Configurer le Scaffold avec le NavigationDrawer
-
-1. **Définir les écrans :** Commençons par créer deux écrans simples :
-
-```kotlin
-@Composable
-fun HomeScreen() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = "Écran d'accueil", style = MaterialTheme.typography.headlineLarge)
-    }
-}
-
-@Composable
-fun ProfileScreen() {
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-        Text(text = "Écran du profil", style = MaterialTheme.typography.headlineLarge)
-    }
-}
-```
-
-2. **Configurer le NavigationDrawer :** Utilisez un `ModalNavigationDrawer` pour afficher un tiroir modifiable.
-
-```kotlin
-@Composable
-fun MainScreen() {
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
-    val scope = rememberCoroutineScope()
-    val navController = rememberNavController()
-
-    ModalNavigationDrawer(
-        drawerState = drawerState,
-        drawerContent = {
-            DrawerContent(onDestinationClicked = { route ->
-                scope.launch { drawerState.close() }
-                navController.navigate(route) {
-                    popUpTo(navController.graph.startDestinationId) { saveState = true }
-                    launchSingleTop = true
-                    restoreState = true
-                }
-            })
-        }
-    ) {
-        Scaffold(
-            topBar = {
-                TopAppBar(
-                    title = { Text("Navigation Drawer") },
-                    navigationIcon = {
-                        IconButton(onClick = {
-                            scope.launch { drawerState.open() }
-                        }) {
-                            Icon(Icons.Filled.Menu, contentDescription = "Menu")
-                        }
-                    }
-                )
-            }
-        ) { padding ->
-            NavHost(
-                navController = navController,
-                startDestination = "home",
-                modifier = Modifier.padding(padding)
-            ) {
-                composable("home") { HomeScreen() }
-                composable("profile") { ProfileScreen() }
-            }
-        }
-    }
-}
-```
-
-3. **Créer le contenu du tiroir :**
-
-```kotlin
-@Composable
-fun DrawerContent(onDestinationClicked: (String) -> Unit) {
-    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-        Text("Menu", style = MaterialTheme.typography.headlineMedium)
-        Spacer(modifier = Modifier.height(16.dp))
-
-        DrawerItem(label = "Accueil", route = "home", onClick = onDestinationClicked)
-        DrawerItem(label = "Profil", route = "profile", onClick = onDestinationClicked)
-    }
-}
-
-@Composable
-fun DrawerItem(label: String, route: String, onClick: (String) -> Unit) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { onClick(route) }
-            .padding(vertical = 8.dp)
-    ) {
-        Text(label, style = MaterialTheme.typography.bodyLarge)
-    }
-}
-```
-
-### Étape 3 : Ajouter la fonction principale
-Assurez-vous que votre fonction principale appelle `MainScreen` :
-
-```kotlin
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            MaterialTheme {
-                MainScreen()
-            }
-        }
-    }
-}
-```
+## Objectifs Pratiques
+- **Ajout de Journalisation** : Observer les appels aux différentes méthodes de rappel avec `Log.d()` dans le fichier `MainActivity.kt`.
+- **Gestion des Données** :
+  - Implémentation de `rememberSaveable` pour éviter la perte de données après une rotation de l'écran.
+  - Maintenir l'état des variables comme le revenu total et le nombre de desserts vendus.
+  
+- **Études de Cas** :
+  - Interagir avec l'application et observer les transitions du cycle de vie (par exemple, revenir à l'activité après l'avoir mise en arrière-plan).
+  - Comprendre le comportement en cas de modification de configuration.
 
 ---
 
-## Résultat attendu
-Lorsque vous exécutez cette application :
-- Vous verrez un menu latéral avec des options "Accueil" et "Profil".
-- Cliquer sur une option naviguera vers l'écran correspondant.
+## Résumé des Étapes
+1. **Initialisation** :
+   - Définir des variables d'état et implémenter des méthodes comme `onCreate()` et `onStart()`.
+   - Ajouter des instructions de journalisation pour chaque méthode de rappel.
 
----
+2. **Modification d'Activité** :
+   - Simuler la rotation d'écran pour observer l'appel des rappels `onPause()`, `onStop()`, et `onDestroy()`.
+   - Résoudre les pertes de données avec `rememberSaveable`.
 
-## Questions pour réflexion
-1. Comment pouvez-vous personnaliser davantage le `NavigationDrawer` pour inclure des icônes ou des sous-menus ?
-2. Comment géreriez-vous la persistance de l'état de navigation après une rotation de l'écran ?
+3. **Analyse Logcat** :
+   - Filtrer les journaux pour comprendre les transitions entre les états.
 
----
-
-## Prochaines étapes
-Dans le prochain tutoriel, nous apprendrons à structurer une application avec l'architecture MVVM pour une meilleure gestion des données et de l'état.
-
-```
 

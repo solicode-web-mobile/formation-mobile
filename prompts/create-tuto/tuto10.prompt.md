@@ -50,6 +50,35 @@ En tant que formateur expérimenté (10 ans) spécialisé en développement Andr
 ---
 
 ### **Plan des tutoriels**  
+1. Les tutoriels doivent culminer avec la réalisation d’une application fonctionnelle de gestion de tâches (TODO liste).  
+2. **Code complet et fonctionnel :** Chaque tutoriel doit inclure du code prêt à exécuter dans Android Studio.  
+3. **Clarté pédagogique :**  
+   - Indiquez les fichiers à modifier dans le projet.  
+   - Commentez chaque bloc de code pour en expliquer le fonctionnement.  
+   - Introduisez chaque partie de code avant son utilisation.  
+   - Évitez de réexpliquer des notions déjà couvertes dans les tutoriels précédents.  
+4. Utilisation obligatoire de **Jetpack Compose** pour tous les tutoriels.
+
+
+Le fichier build.gradle.kts utilise la configuration moderne basée sur les catalogues de versions (libs). 
+
+- Dans le mini projet il faut utiliser seulement les notion aborder dans les tuto précédents et les modules précédentes
+---
+
+### Plan des tutoriels  
+
+1. Introduction au développement Android et Jetpack Compose.  
+2. Comprendre les concepts fondamentaux : Layouts et Widgets.  
+3. Gestion des états avec Compose : Création d’une TODO liste simple.  
+4. Interaction utilisateur et navigation : Ajout d’un système de tâches.  
+5. Persistance des données : Sauvegarder les tâches avec Room.  
+6. Optimisation et déploiement de l’application finale.  
+
+---
+
+Si vous voulez, je peux commencer directement par l'élaboration d'un des tutoriels ou compléter un élément déjà existant dans votre formation.
+
+### Plan des tutoriels :
 
 ```
 
@@ -461,4 +490,24 @@ class MainActivity : ComponentActivity() {
 2. Quels sont les avantages d’utiliser des objets pour définir les routes ?  
 3. Comment gérer les erreurs liées aux arguments manquants lors de la navigation ?
 ```
+
+
+## **Tâche à réaliser :**  
+
+Rédiger le **Tutoriel 10 : Navigation dans Jetpack Compose**.  
+
+### **Instructions :**  
+
+1. Rédiger un guide détaillé et pédagogique sur la navigation dans Jetpack Compose.
+2. Intégrer des définitions clés pour bien comprendre les concepts liés à la navigation pour chaque étapes de tutoriel, tels que :
+   - **NavHost**
+   - **NavGraph**  
+   Expliquez leur rôle et leur importance dans le cadre de Jetpack Compose.  
+
+### **Ressource actuelle à adapter :**  
+Utilisez le contenu existant disponible ici :  
+`!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto10.md]`  
+
+### **Résultat attendu :**  
+Le nouveau tutoriel sera exporté à l'adresse suivante : 
 

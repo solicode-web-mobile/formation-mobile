@@ -13,13 +13,6 @@
 !import[/../projets/_chapters/mobile/m1-première-application-android/tuto3.md]
 ```
 
-```
-!import[/../projets/_chapters/mobile/m1-première-application-android/tuto3plus.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m1-première-application-android/mini-projet.md]
-```
 
 ```
 !import[/../projets/_chapters/mobile/m2-créer-interface-utilisateur/tuto4.md]
@@ -44,13 +37,4 @@
 
 ```
 !import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto10.md]
-```
-
-
-```
-!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto11.md]
-```
-
-```
-!import[/../projets/_chapters/mobile/m4-navigation-architecture/tuto12.md]
 ```

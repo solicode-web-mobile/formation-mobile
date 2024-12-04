@@ -37,14 +37,15 @@
 - **Résumé :** Maîtriser les concepts avancés pour écrire un code robuste.
 
 #### **Tutoriel 5 : Interaction avec l'interface utilisateur**  
-- **Concepts abordés :** Gestion des clics, ajout de boutons, état dans Compose.  
+- **Concepts abordés :** Gestion des clics, ajout de boutons.
 - **Tags :** UI, Gestion de l'état, Jetpack Compose.  
 - **Résumé :** Créer des applications interactives et réactives.
 
-#### **Tutoriel 6 : Gestion de l’état dans Jetpack Compose**  
-- **Concepts abordés :** États, immutabilité
-- **Tags :** État, Jetpack Compose.  
-- **Résumé :** Contrôler l'état et la réactivité de l'application.
+#### **Tutoriel 6 : Gestion d'états réactifs et des flux de données**  
+- **Concepts abordés :** Observateurs, `State`, `StateFlow`, `Flow`.  
+- **Tags :** Gestion de l'état, Réactivité, Jetpack Compose, Coroutines.  
+- **Résumé :** Apprendre à gérer efficacement l’état et les flux de données pour construire des applications réactives et modernes avec Jetpack Compose.  
+  
 
 
 ---
@@ -81,16 +82,22 @@
 - **Tags :** Navigation, Jetpack Compose.  
 - **Résumé :** Créer des applications multi-écrans et gérer la navigation.
 
-#### **Tutoriel 11 : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
+#### **Tutoriel 10+ : Ajouter un NavigationDrawer avec Jetpack Compose au Turoriel 10**  
 - **Concepts abordés :** Apprendre à intégrer un menu de navigation latérale (*NavigationDrawer*) dans une application Android utilisant Jetpack Compose pour permettre une navigation fluide entre plusieurs écrans.
 - **Tags :** 
 - **Résumé :** 
 
+#### **Tutoriel 11 : Cycle de vie d'une activité Android**  
+- **Concepts abordés :** Cycle de vie d'une activité Android, journalisation avec Logcat, gestion de l'état avec `rememberSaveable`, impact des modifications de configuration.  
+- **Tags :** Cycle de vie, Android, Logcat, état, rememberSaveable.  
+- **Résumé :** Comprendre et implémenter le cycle de vie d'une activité Android, diagnostiquer les transitions entre les états grâce à la journalisation, et gérer les modifications de configuration pour préserver les données utilisateur.
 
-#### **Tutoriel 12 : Introduction à l’architecture MVVM**  
-- **Concepts abordés :** Cycle de vie, ViewModel, StateFlow.  
-- **Tags :** Architecture, ViewModel.  
-- **Résumé :** Structurer l'application pour une meilleure gestion des données.
+
+#### **Tutoriel 12 : Utilisation de ViewModel et gestion d'état dans Jetpack Compose**  
+- **Concepts abordés :** Introduction à ViewModel, gestion de l'état avec `StateFlow`, séparation des responsabilités entre UI et logique métier, immutabilité de l'état, et persistance de l'état lors des changements de configuration.  
+- **Tags :** ViewModel, Jetpack Compose, StateFlow, UDF, gestion d'état.  
+- **Résumé :** Découvrir comment utiliser ViewModel pour gérer l'état dans une application Jetpack Compose, tout en suivant un flux de données unidirectionnel. Ce tutoriel explore la persistance de l'état, l'immuabilité, et la gestion des événements utilisateur pour construire des applications réactives et robustes.  
+
 
 
 ---
